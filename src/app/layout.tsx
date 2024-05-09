@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { assistant } from "@/components/font";
 const inter = Inter({ subsets: ["latin"] });
+import Nav from '@/components/header/nav'
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +17,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={assistant.className}>{children}</body>
+    
+      <body className={assistant.className}>
+        <div className="relative">
+          <Nav />
+        
+          {children}
+        </div>
+        
+      </body>
     </html>
   );
 }
