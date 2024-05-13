@@ -14,8 +14,8 @@ export const NavList = () => {
                 home
           </Link>
           <div className='relative '  >
-              <div className={`flex justify-between border-b items-baseline text-center  mx-2  py-2 md:py-0  md:border-white   border-b-dark-blue 
-                hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white  hover:md:text-inherit  transition-all duration-500 `} onClick={() => setOpenDepartment(!openDepartment)}>
+              <div className={`flex justify-between border-b items-baseline text-center  mx-2  py-2 md:py-0  md:border-white font-medium  border-b-dark-blue 
+                hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white  hover:md:text-inherit  transition-all duration-500 `} onClick={() => { setOpenDepartment(!openDepartment); setOpenMusic(false) }}>
                   <span className={` ${openDepartment && ' font-bold md:font-medium'} pl-2 md:pl-0`}>
                     departments
                   </span>
@@ -29,20 +29,20 @@ export const NavList = () => {
               // onMouseLeave={() => { setOpenDepartment(false); setOpenMusic(false) }}
               // onMouseEnter={() => { setDepartmenthadFocus(true) }}
         >
-                  <Link href={''} className='flex py-1.5 content-center  items-baseline text-center  mx-2 pl-2 md:pl-0 border-b  border-white hover:border-b-gray-500 hover:border-r-mid-blue  hover:md:text-gray-400 
-                   hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white   hover:md:text-inherit hover:md:bg-inherit transition-all duration-500'>
+                  <Link href={''} className='flex py-1.5 content-center  items-baseline text-center  mx-2 pl-2 md:pl-0 border-b  border-white hover:border-b-gray-500 hover:border-r-mid-blue  hover:md:text-gray-300 
+                   hover:bg-dark-blue active:bg-dark-blue  hover:text-white    hover:md:bg-inherit transition-all duration-500'>
                     Sabbath School
                   </Link>
-                  <Link href={''} className='flex py-1.5 content-center  items-baseline text-center  mx-2 pl-2 md:pl-0 border-b  border-white hover:border-b-gray-500 hover:border-r-mid-blue  hover:md:text-gray-400 
-                   hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white   hover:md:text-inherit hover:md:bg-inherit transition-all duration-500'>                    Personal Ministry
+                  <Link href={''} className='flex py-1.5 content-center  items-baseline text-center  mx-2 pl-2 md:pl-0 border-b  border-white hover:border-b-gray-500 hover:border-r-mid-blue  hover:md:text-gray-300 
+                   hover:bg-dark-blue active:bg-dark-blue  hover:text-white   hover:md:bg-inherit transition-all duration-500'>                    Personal Ministry
                   </Link>
-                  <Link href={''} className='flex py-1.5 content-center  items-baseline text-center  mx-2 pl-2 md:pl-0 border-b  border-white hover:border-b-gray-500 hover:border-r-mid-blue  hover:md:text-gray-400 
-                   hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white   hover:md:text-inherit hover:md:bg-inherit transition-all duration-500'>                    youth
+                  <Link href={''} className='flex py-1.5 content-center  items-baseline text-center  mx-2 pl-2 md:pl-0 border-b  border-white hover:border-b-gray-500 hover:border-r-mid-blue  hover:md:text-gray-300 
+                   hover:bg-dark-blue active:bg-dark-blue  hover:text-white  hover:md:bg-inherit transition-all duration-500'>                    youth
                   </Link>
                   <div className={` relative    `} onClick={() => setOpenMusic(!openMusic)} >
                    <div className={`flex 
-                       py-1.5 justify-between content-cent  items-baseli text-center ml-2 md:mx-2 pl-2 md:pl-0 border-b border-white hover:border-b-gray-500 
-                      hover:   hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white   hover:md:text-inherit hover:md:bg-inherit transition-all duration-500
+                       py-1.5 justify-between content-cent  items-baseli text-center ml-2 md:mx-2 pl-2 md:pl-0 border-b border-white hover:border-b-gray-500 hover:md:text-gray-300 
+                      hover:   hover:bg-dark-blue active:bg-dark-blue  hover:text-white   hover:md:bg-inherit transition-all duration-500
                       ${openMusic && ' font-bold md:font-inherit border-b border-t md:border-t-0  border-y-mid-blue'}`}>
                            Music
                          <span className='bordr self-center '><IoMdArrowDropdown /></span>
@@ -51,29 +51,33 @@ export const NavList = () => {
                       
                     {openMusic && <div className='md:absolute  px-2 py-3 md:text-white left-60 top-0 md:z-10 sm:w-full md:w-60 h-fit md:bg-mid-blue' >
                       <Link href={''} className='flex py-1.5 content-center  items-baseline text-center  mx-2 pl-2 md:pl-0 border-b   border-white hover:border-b-gray-300  
-                       hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white hover:md:text-gray-200   hover:md:text-inherit hover:md:bg-inherit   transition-all duration-500'>
+                       hover:bg-dark-blue active:bg-dark-blue  hover:text-white hover:md:text-gray-200   hover:md:bg-inherit   transition-all duration-500'>
                         church choir
                       </Link>
                       <Link href={''} className='flex py-1.5 content-center  items-baseline text-center  mx-2 pl-2 md:pl-0 border-b   border-white hover:border-b-gray-300  
-                       hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white hover:md:text-gray-200   hover:md:text-inherit hover:md:bg-inherit   transition-all duration-500'>
+                       hover:bg-dark-blue active:bg-dark-blue  hover:text-white hover:md:text-gray-200   hover:md:bg-inherit   transition-all duration-500'>
                          youth choir
                       </Link>
                       <Link href={''} className='flex py-1.5 content-center  items-baseline text-center  mx-2 pl-2 md:pl-0 border-b   border-white hover:border-b-gray-300  
-                       hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white hover:md:text-gray-200   hover:md:text-inherit hover:md:bg-inherit   transition-all duration-500'>
+                       hover:bg-dark-blue active:bg-dark-blue e hover:text-white hover:md:text-gray-200   hover:md:bg-inherit   transition-all duration-500'>
                          Singing Band
                       </Link>
+                      <Link href={''} className='flex py-1.5 content-center  items-baseline text-center  mx-2 pl-2 md:pl-0 border-b   border-white hover:border-b-gray-300  
+                       hover:bg-dark-blue active:bg-dark-blue e hover:text-white hover:md:text-gray-200   hover:md:bg-inherit   transition-all duration-500'>
+                         Praise team
+                       </Link>
                       <Link href={''} className='flex py-1.5 content-center  items-baseline text-center  mx-2 pl-2 md:pl-0    border-white hover:border-b-gray-300  
-                       hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white hover:md:text-gray-200   hover:md:text-inherit hover:md:bg-inherit   transition-all duration-500'>
+                       hover:bg-dark-blue active:bg-dark-blue  hover:text-white hover:md:text-gray-200  hover:md:bg-inherit   transition-all duration-500'>
                           Echoes of Victory
                       </Link>
                     </div>}
                   </div>
-                  <Link href={''} className='flex py-1.5 content-center  items-baseline text-center  mx-2 pl-2 md:pl-0 border-b  border-white hover:border-b-gray-500 hover:border-r-dark-blue  hover:md:text-gray-400 
-                   hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white   hover:md:text-inherit hover:md:bg-inherit transition-all duration-500'>
+                  <Link href={''} className='flex py-1.5 content-center  items-baseline text-center  mx-2 pl-2 md:pl-0 border-b  border-white hover:border-b-gray-500 hover:border-r-dark-blue  hover:md:text-gray-300 
+                   hover:bg-dark-blue active:bg-dark-blue  hover:text-white  hover:md:bg-inherit transition-all duration-500'>
                       woman Ministry
                   </Link>
-                  <Link href={''} className='flex py-1.5 content-center  items-baseline text-center  mx-2 pl-2 md:pl-0 border-  border-white hover:border-b-gray-500 hover:border-r-dark-blue  hover:md:text-gray-400 
-                   hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white   hover:md:text-inherit hover:md:bg-inherit transition-all duration-500'>
+                  <Link href={''} className='flex py-1.5 content-center  items-baseline text-center  mx-2 pl-2 md:pl-0 border-  border-white hover:border-b-gray-500 hover:border-r-dark-blue  hover:md:text-gray-300 
+                   hover:bg-dark-blue active:bg-dark-blue  hover:text-white  hover:md:bg-inherit transition-all duration-500'>
                       Communnication
                   </Link>
                 </div>

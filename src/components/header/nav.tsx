@@ -18,11 +18,11 @@ const Nav = () => {
   const [openDrawer, setOpenDrawer] = useState(false)
 
   return (
-    <div className='fixed top-0 right-0 left-0 bg-white h-fit w-full z-10 '>
+    <div className='fixed top-0 right-0 left-0 bg-white h-fit w-full z-50 '>
       <div className='flex relative justify-between items-center  p-1.5'>
         <div className=' left-10'>
           <div className=''>
-            <Image src={'logo.svg'} width={85} height={35} />
+            <Image src={'logo.svg'} width={85} height={35} alt=''/>
           </div>
         </div>
         <div className='flex flex-col items-end md:mr-4 lg:mr bordr'>
