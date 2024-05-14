@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { assistant } from "@/components/font";
 import Nav from '@/components/header/nav'
+import Footer from "@/components/footer/footer";
 // import { Providers } from "./provider";
 
 
@@ -28,8 +29,10 @@ export default function RootLayout({
         {/* <Providers> */}
           <div className="relative">
               <Nav />
-            
-              {children}
+              {/* <div className=" bg-red-500"> */}
+                {children}
+          {/* </div> */}
+           <Footer/>
           </div>
         {/* </Providers> */}
       </body>
