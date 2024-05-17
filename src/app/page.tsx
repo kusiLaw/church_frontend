@@ -2,25 +2,43 @@ import Image from "next/image";
 import { IoIosArrowForward } from "react-icons/io";
 import { assistant } from "@/components/font";
 import Link from "next/link";
+import DrawerExample from "@/components/slider";
+
+
 export default function Home() {
   return (
-    <main className=" h-screen w-screen ">
-          <section className="relative bg-[#7aa8c5]/60  h-full w-full bg-no-repeat   bg-[url('/pic.jpg')] bg-cover   text-gray">
-            <div className="absolute   right-0 left-0 top-0 bottom-0  h-full w-full">
-               <div className="p-8 flex flex-col justify-center items-center w-screen bg-[#eee]/80 h-screen m-auto " >
-                      <p className="font-light text-[2rem]">Welcome to!</p>
-                      <p className="font-bold text-[1.8rem] md:text-[2.5rem]  lg:text-[3.5rem]">M.K SDA Int Church,</p>
-                      <p className="mt-3 text-wite text-center">This site is under contruction. we are actively working on it.  </p>
-                      <Link href='https://www.facebook.com/search/top?q=milton%20keynes%20international%20sda%20church' 
-                        className={`${assistant.className} flex w-fit justify-center items-center gap-3 rounded-md bg-[#0172a5] font-semibold mt-6  px-4 py-3  font- leading-6 text-lg capitalize
-                        text-white shadow-sm  hover:bg-[#0172a5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}>
-                        Visit Our Facebook now
+    <main className=" h-scre w-scree ">
+      {/* <div className=" bg-[#7aa8c5]/60   flex flex-col justify-end h-screen w-full bg-no-repeat  bg-[url('/pic.jpg')] bg-fixed bg-cover   text-gray">
+      
+      </div>  */}
+  <div className="bg-[url('/prayer1.jpg')] lg:bg-[url('/prayer2.jpg')] bg-cover bg-fixed">
+        
+     <section className="b-[#7aa8c5]/30 py-8 h-[30rem]  bg-fixed -z-10 pt-6 mt-28  img_4">
+            <div className=" mt-3 h-full">
+            <div className="p-8  h-full text-white bg-[#000]/40 w-[90%] m-auto 
+                lg:mb-10 overflow-hidden" >
+                      {/* <p className="font-bold te text-[2rem] md:text-[2.5rem]">prayers!</p> */}
+                      <p className="font-bold text-[1.8rem] md:text-[2.5rem] ">Prayer has the power to heal the soul</p>
+                      <p className="mt-3 text-wite lg:w-[70%]">Prayer is the song we sing in our hearts, the hope we keep in our minds, the music of our souls. With prayer, we can overcome all hardships and find joy. We can overcome difficulty and find salvation. Come pray with us. Discover the power that is inside of you, waiting to be set free. </p>
+                      <button
+                        type="submit"
+                        className={`${assistant.className} flex w-fit justify-center items-center gap-3 rounded-md bg-dark-blue font-semibold mt-6  px-4 py-3  font- leading-6 text-lg capitalize
+                        text-white shadow-sm  hover:bg-dark-blue/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}>
+                        Join us
                         <IoIosArrowForward/>
-                      </Link>
+                      </button>
                 </div>
             </div>
       </section>
-   
+      <section className="h-[35rem] drop-shadow-lg bg-mid-blue/70 custom-border-layer1 z-10">
+        <div className="h-full w-full bg-light-blue/70 custom-border-layer2 drop-shadow-md ">
+           <div className="h-full w-full bg-white custom-border-layer3 ">
+          
+          </div>
+         </div>
+        </section>
+          </div>
+
     </main>
   );
 }
