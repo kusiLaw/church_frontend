@@ -19,6 +19,46 @@ export default function Home() {
       </section>
       
 
+      <section className="relative text-white mt-20 b-[url('/hideout.svg')] bg-[url('/congregation.jpg')] h-fit
+          w-full bg-fixed md:bg-cover
+          md:bg-no-repeat bg-tp md:bg-center">
+        <div className="h-full py-20 w-full -z-10 bg-black/60 ">
+          <h2 className={` text-center flex flex-col gap-3 text-3xl font-medium capitalize after:h-[2px] after:w-12 after:self-center 
+              after:bg-red-600 mb-10 m text-white`}>
+                Weekly activities
+          </h2>
+        
+          <p className="w-full text-center text-lg">We invite you to join us in person and online for worship.</p>
+          <div className="w-full mt-10  flex justify-center px-4 sm:justify-between  flex-wrap gap-10 sm:gap-6
+           flex-shr border- border-red-700 ">
+            <div className="col-span- w-[90%] sm:w-[47%] md:w-[30%] lg:w-[22%] flex justify-center ">
+              <ProgramCard title="Sunday bible studies" text="Join us study world of God on every sunday." date="Every sunday " time="19:30" link="/" loc="zoom">
+                <BiBible/>
+              </ProgramCard>
+            </div>
+              <div className="col-span- w-[90%] sm:w-[47%] md:w-[30%] lg:w-[22%]  flex justify-center">
+
+                  <ProgramCard title="Wednesday Prayers" text="We have God who answers prayer." date="Every Wednesday " time="19:30" link="/" loc="zoom">
+                    <BiBible/>
+                  </ProgramCard>
+              </div>
+              <div className="col-span- w-[90%] sm:w-[47%] md:w-[30%] lg:w-[22%] flex justify-center">
+
+                <ProgramCard title="Friday Meetings" text="We welcome sabbath and have a word of prayers" date="Every friday " time="19:00" link="/" loc="zoom">
+                  <BiBible/>
+                </ProgramCard>
+                </div>
+              <div className="col-span- w-[90%] sm:w-[47%] md:w-[30%] lg:w-[22%] flex justify-center">
+
+                  <ProgramCard title="Sabbath Meetings" text="Remember the sabbath to keep it holy" date="Every saturday " time="9:30" link="/" loc="on premises">
+                     <BiBible/>
+                  </ProgramCard>
+                </div>
+
+          </div>
+        </div>
+      </section>
+      
       <section className="md:mx-4 text-xl font-light px-4 md:px-10 h-fit mt-24  mb-20">
           <h2 className={` text-center flex flex-col gap-3 text-2xl font-medium capitalize after:h-[2px] after:w-12 after:self-center 
               after:bg-red-600 mb-10 `}>
