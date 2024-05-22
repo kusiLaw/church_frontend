@@ -20,7 +20,58 @@ export default function Home() {
       
       <div className="block lg:flex">
 
-  
+        <div className="w-full z-20 bg-red-4 px-2 md:px-4"   >
+         
+          <section className="w-full "   >
+            <div className="z-20 bg-red-4 px-2 md:px-4" >
+              <div className="w-full flex justify-center lg:justify-start">
+                  <h2 className={` text- flex flex-col gap-3 text-2xl font-medium capitalize after:h-[2px] after:w-12 after:self-center w-fit 
+                after:bg-red-600 mb-10`}>
+                  28 fundamental beliefs 
+                </h2>
+              </div>
+          
+              <p className="flx text-base h-fit  ">
+                <span className="inline-flex font-bold text-6xl h-fit float-left -mt-4">S</span>
+                eventh-day Adventists accept the Bible as their only creed and hold certain fundamental beliefs to be the teaching of the Holy Scriptures. These beliefs,
+                  as set forth here, constitute the church{"'"}s understanding and expression of the teaching of Scripture. Revision of these statements may be expected at a quinquennial General Conference Session whenever the church is led by the Holy Spirit to
+                  a fuller understanding of Bible truth, or if better language is found to express these teachings of God{"'"}s Holy Word. The expression of these concepts help provide an overall picture of what this Christian denomination collectively believes and practices.
+                    Together, these teachings reveal a God who is the architect of the world. In wisdom, grace and infinite love,
+                  He is actively working to restore a relationship with humanity that will last for eternity. 
+              </p>
+            
+              <div className="w-full  mt-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-8 sm:place-content-between md:grid-cols-3   gap- flex-shrink  w-full">
+                  {[{
+                    'id': '1', 'topic': 'holy scripture hh', 'image': '/scripture.jpg', 'text': ' The Holy Scriptures, Old and New Testaments, are the written Word of God, given by divine inspiration.',
+                    'verses': 'Ps. 119:105; Prov. 30:5, 6; Isa. 8:20; John 17:17; 1 Thess. 2:13; 2 Tim. 3:16, 17; Heb. 4:12; 2 Peter 1:20, 21. nnn jkj kjj kjj lkjk dslkd slknsjl'
+                  },
+                    {
+                    'id': '2', 'topic': 'The Trinity', 'image': '/trinity.webp', 'text': 'There is one God: Father, Son, and Holy Spirit, a unity of three coeternal Persons.',
+                    'verses': 'Gen. 1:26; Deut. 6:4; Isa. 6:8; Matt. 28:19; John 3:16; 2 Cor. 1:21, 22; 13:14; Eph. 4:4-6; 1 Peter 1:2.'
+                    },
+                    {
+                    'id': '3', 'topic': 'God the Father', 'image': '/thefather3.webp', 'text': 'God the eternal Father is the Creator, Source, Sustainer, and Sovereign of all creation. He is just and holy, merciful and gracious, slow to anger, and abounding in steadfast love and faithfulness', 
+                    'verses': 'Gen. 1:1; Deut. 4:35; Ps. 110:1, 4; John 3:16; 14:9; 1 Cor. 15:28; 1 Tim. 1:17; 1 John 4:8; Rev. 4:11.'
+                  },
+                  
+                  ].map((item, index) => (
+                    <div key={item.id}>
+                      <BeliefCard {...item} id={index + 1} />
+                    </div>
+                ))}
+                </div>
+                <p className="mt-8 w-full text-center sm:text-end lg:mr-4">
+                  <Link href={''} className=" sm:text-end w-full underline underline-offset-4 text-dark-blue ">View All</Link>
+                </p>
+          
+              </div>
+              
+            </div>
+          </section> 
+          
+
+        </div>
         <aside className="  hidden lg:block lg:w-[14rem] mr-2 ">
           <div className="w-full sticky top-36">
             <AsideCard heading="Up comming Events">
