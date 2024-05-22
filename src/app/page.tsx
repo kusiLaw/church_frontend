@@ -18,7 +18,39 @@ export default function Home() {
             <WelcomeSection />
       </section>
       
+      <div className="block lg:flex">
 
+  
+        <aside className="  hidden lg:block lg:w-[14rem] mr-2 ">
+          <div className="w-full sticky top-36">
+            <AsideCard heading="Up comming Events">
+              {false &&
+              <>
+              <EventCard name="One week fasting and prayers" title="Pray without seasion" post_code="mk3 6ty" date="12-12-24" time="11:30 am" />
+                <EventCard name="Sabbath School week" title="Teach the love of god" post_code="mk3 6ty" date="12-12-24" time="11:30 am" />
+              </>
+              }
+            </AsideCard>
+            <AsideCard heading="Recent activities">
+                  {false && <div className=" flex flex-col truncate gap-3 overflow-hidden px-4 ">
+                    <Link href={''} className="capitalize text-dark-blue hover:text-mid-blue underline underline-offset-2 text-wrap  text-base">Week of prayers - 25/06/2024 </Link>
+                    <Link href={''} className="capitalize text-dark-blue hover:text-mid-blue underline underline-offset-2 text-wrap text-base ">Week of prayercsscsscccscs - 25/06/2024 </Link>
+
+                    <Link href={''} className="capitalize text-dark-blue hover:text-mid-blue underline underline-offset-2 text-wrap  text-base">Week of prayers csc- 25/06/2024 </Link>
+
+                    <Link href={''} className="capitalize text-dark-blue hover:text-mid-blue underline underline-offset-2 text-wrap text-base">Week of prayerscsc - 25/06/2024 </Link>
+
+                  </div>
+                
+                  }
+            </AsideCard>
+
+          </div>
+       
+        </aside>
+      
+      </div>
+      
       <section className="relative text-white mt-20 b-[url('/hideout.svg')] bg-[url('/congregation.jpg')] h-fit
           w-full bg-fixed md:bg-cover
           md:bg-no-repeat bg-tp md:bg-center">
