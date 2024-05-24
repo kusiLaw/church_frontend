@@ -70,6 +70,69 @@ export default function Home() {
             </div>
           </section> 
           
+           <section className="w-full mt-20"   >
+            <div className="z-20 bg-red-4 px-2 md:px-4" >
+              <div className="w-full flex justify-center lg:justify-start">
+                  <h2 className={` text- flex flex-col gap-3 text-2xl font-medium capitalize after:h-[2px] after:w-12 after:self-center w-fit 
+                after:bg-red-600 mb-4`}>
+                  the three angles message 
+                </h2>
+              </div>
+          
+             
+              <div className="w-full  mt-6">
+                <div className="  w-fu flex flex-wrap ">
+                        <div className="w-[100%] lg:w-[55%" >
+                    <p className="flx text-base h-fit mb-4  ">
+                      The Three Angels{"'"} Messages are God{"'"}s special messages for last-day Christians. This message is to be shared with the world and will reach
+                      its climax with the second coming of Jesus. This threefold message appears in ( Revelation 14:6-16. )
+                    </p>
+                    <div className="">
+                        <h3 className="mb-2" >
+                          <span className="text-dark-blue font-extrabold italic text-2xl mr-2">01.</span>
+                          <span className="font-semibold ">THE FIRST ANGEL{"'"}S MESSAGE </span> 
+                        </h3>
+                         <p className="w-[95%] mx-auto mb-6"> The first angel proclaims the everlasting gospel and calls for the restoration of the true worship of God as Creator, because the judgment hour has arrived.
+                        <span> “Then I saw another angel flying in the midst of heaven,
+                          having the everlasting gospel to preach to those who dwell on the earth—to every nation, tribe, tongue,
+                          and people—saying with a loud voice, ‘Fear God and give glory to Him, for the hour of His judgment has come;
+                          and worship Him who made heaven and earth, the sea and springs of water{"'"}” (Revelation 14:6, 7).
+                        </span>
+                         </p>
+                    </div>
+                       <div className="">
+                        <h3 className="mb-2" >
+                          <span className="text-dark-blue font-extrabold italic text-2xl mr-2">02.</span>
+                          <span className="font-semibold ">THE FIRST ANGEL{"'"}S MESSAGE </span> 
+                        </h3>
+                         <p className="w-[95%] mx-auto mb-6"> The second angel warns against all humanly-originated forms of worship and beliefs that are not based completely on God{"'"}s Word.
+                        <span> “Another angel followed, saying, { '"'}Babylon is fallen, is fallen, that great city, because she
+                          has made all nations drink of the wine of the wrath of her fornication{"' ”  "}(Revelation 14:8).</span>
+                         </p>
+                    </div>
+                       <div className="">
+                        <h3 className="mb-2" >
+                          <span className="text-dark-blue font-extrabold italic text-2xl mr-2">03.</span>
+                          <span className="font-semibold ">THE FIRST ANGEL{"'"}S MESSAGE </span> 
+                        </h3>
+                      <p className="w-[95%] mx-auto mb-6"> “Then a third angel followed them, saying with a loud voice, {"'"}If anyone worships the beast and his image, and receives his mark on his forehead or on his hand, he himself shall also drink of the wine of the wrath of God, which is poured out full strength into the cup of His indignation.
+                        they have no rest day or night, who worship the beast and his image, and whoever receives the mark of his name.{"'"} Here is the patience of the saints; here are those who keep the commandments of God and the faith of Jesus” (Revelation 14:9-12).
+
+                        <span className="block mt-3">Note: though Scripture symbolically portrays these messages as being proclaimed by three angels, it is actually God{"'"}s
+                          people—His last-day church—who deliver them to the world. Additionally, two groups emerge—those who choose to follow God{"'"}s Word completely and those who choose to mix biblical teachings with human traditions.</span>
+                         </p>
+                    </div>
+                  </div>
+                     
+
+
+                  <div className="w-[95%] lg:w-[45% h-[20rem] md:h-[32rem]  mx-auto mt-8 mb-24">
+                    <YoutubeVideo embedId="4m3d43gVJsg"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section> 
 
         </div>
         <aside className="  hidden lg:block lg:w-[14rem] mr-2 ">
