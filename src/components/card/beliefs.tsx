@@ -5,8 +5,9 @@ import CardLayout from './layout'
 
 const BeliefCard = ({id ='' || 1 , link='', image='', topic= '', text='', verses=''}) => {
   return (
-    <CardLayout>             
-               <div className='overflow-hidden border-none h-[12rem] '>
+  <div className="relative flex flex-col flex-initial flex-shrink  shadow-sm border-[0.1px] max-w-[22rem] h-[28rem] min-w-[12rem]
+                  rounded-2xl border-none hover:scale-105 transition-all duration-700">
+                  <div className='overflow-hidden border-none h-[12rem] '>
                         <Image src={image} width={350} height={350}  alt=''  className='rounded-tl-xl rounded-tr-xl'/>
 
                 </div>
@@ -26,7 +27,7 @@ const BeliefCard = ({id ='' || 1 , link='', image='', topic= '', text='', verses
                 </div>
               
                 <p className="mb-4 w-full text-end mt-4"><Link href={link} className="text-dark-blue hover:text-light-blue px-2 text-end w-full"> Learn More </Link></p>
-  </CardLayout> 
+  </div> 
   )
 }
 

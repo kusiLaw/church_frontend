@@ -1,21 +1,20 @@
 'use client'
 import { useState } from 'react'
 import Image from 'next/image'
-// import SocialIcons from '../social/social_icons'
 import FooterList from '@/components/footer/footer_items'
 import SocialMedia from '../social_media'
-// import Input from '../form/input'
+
 
 
 const Footer = () => {
   const [email, setEmail] = useState('');
   return (
     <footer className=' text-gray-200  w-full md:mt-[8rem]  max-w-[1660px] mx-auto   bg-transparent z-20'>
-        <div className='overflow-hidden bg-white w-full flex justify-center '>
+        <div className='overflow-hidden bg-white w-full flex justify-center  -mb-1'>
                   {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319"><path fill="#2e3092" fill-opacity="1" d="M0,224L60,240C120,256,240,288,360,293.3C480,299,600,277,720,277.3C840,277,960,299,1080,304C1200,309,1320,299,1380,293.3L1440,288L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg> */}
               <Image src='to_top.svg' alt='top' width={200}  height={85} />
           </div>
-      <div className='bg-dark-blue'>
+      <div className='bg-dark-blue z-30'>
 
           
           <div className='flex flex-col md:flex-row justify-between md:items-start  w-full pt-8  md:pt-12 px-4 md:px-10 '>
@@ -74,7 +73,7 @@ const Footer = () => {
           <div className=' flex flex-col-reverse gap-6
                 md:flex-row md:justify-between
                 mt-8 font-thin md:font-light text-sm text-gray-300 w-full '>
-            <p className='w-full text-center mb-6'>Powered by Lawrence 2024 . All rights reserved.</p>
+            <p className='w-full text-center mb-6'>Powered by K. Lawrence 2024 . All rights reserved.</p>
         
           </div>
       

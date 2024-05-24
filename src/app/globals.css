@@ -3,12 +3,19 @@
 @tailwind utilities;
 
 .custom-border-layer1 {
-    clip-path: polygon(100% 6%, 100% 100%, 0 100%, 0 0);
+    clip-path: polygon(100% 2%, 100% 100%, 0 100%, 0 0);
 }
 
 .custom-border-layer2 {
-clip-path: polygon(100% 10%, 100% 100%, 0 100%, 0 0);
+clip-path: polygon(100% 4%, 100% 100%, 0 100%, 0 0);
 }
 .custom-border-layer3 {
-clip-path: polygon(100% 16%, 100% 100%, 0 100%, 0 0);
+clip-path: polygon(100% 6%, 100% 100%, 0 100%, 0 0);
 }
+
+
+/* @media screen and (min-width: 768px){ */
+    .clip_border {
+            clip-path: polygon(71% 0, 74% 5%, 100% 5%, 100% 100%, 0 100%, 0 5%, 61% 5%);
+        }
+/* } */

@@ -27,12 +27,15 @@ export default function RootLayout({
     
       <body className={assistant.className}>
         {/* <Providers> */}
-          <div className="relative">
-              <Nav />
-              {/* <div className=" bg-red-500"> */}
+          <div className="relative flex flex-col items-center justify-center w-full">
+            <div className="max-w-[1660px] w-full">
+            <Nav />
+            <div className="mt-[6rem]">
                 {children}
-          {/* </div> */}
-           <Footer/>
+            </div>
+           
+            <Footer/>
+            </div>
           </div>
         {/* </Providers> */}
       </body>
