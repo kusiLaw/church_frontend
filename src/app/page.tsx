@@ -9,7 +9,7 @@ import { SlLocationPin } from "react-icons/sl";
 import { BiBible } from "react-icons/bi";
 import 'dotenv/config'
 import YoutubeVideo from "@/components/video/youtube";
-
+import MapContainer from "@/components/map/map";
 
 export default function Home() {
   return (
@@ -249,7 +249,7 @@ export default function Home() {
           <div className="w-full lg:w-[45%] max-h-fit  ">
             <div className="flex gap-2 mb-4 items-center font-medium"><SlLocationPin /> MK1 1QT </div>
             <div className="w-full relative  h-[32rem]">
-              {/* <MapContainer apiKey={process.env.GOOGLE_MAP_KEY || ''} mapId={process.env.GOOGLE_MAP_KEY || ''} /> */}
+              <MapContainer apiKey={process.env.GOOGLE_MAP_KEY || ''} mapId={process.env.GOOGLE_MAP_KEY || ''} />
          
             </div>
            
