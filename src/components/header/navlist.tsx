@@ -13,9 +13,11 @@ export const NavList = () => {
                    border-b-dark-blue md:border-white   hover:border-b-dark-blue  hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white hover:md:text-inherit  transition-all duration-500'>
                 home
           </Link>
-          <div className='relative '  >
+          <div className='relative'  >
               <div className={`flex justify-between border-b items-baseline text-center  mx-2  py-2 md:py-0  md:border-white font-medium  border-b-dark-blue 
-                hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white  hover:md:text-inherit  transition-all duration-500 `} onClick={() => { setOpenDepartment(!openDepartment); setOpenMusic(false) }}>
+                hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white  hover:md:text-inherit  transition-all duration-500
+              
+                `} onClick={() => { setOpenDepartment(!openDepartment); setOpenMusic(false) }}>
                   <span className={` ${openDepartment && ' font-bold md:font-medium'} pl-2 md:pl-0`}>
                     departments
                   </span>
@@ -25,11 +27,11 @@ export const NavList = () => {
               </div> 
               
               
-              {openDepartment && <div className=' md:absolute p-2  md:text-white right-0 top-10 z-20 w-full md:w-64 h-fit  bg-white md:bg-dark-blue md:drop-shadow-lg transition-all duration-500'
+              {openDepartment && <div className='md:absolute p-2  md:text-white right-0 top-10 z-20 w-full md:w-64 h-fit  bg-white md:bg-dark-blue md:drop-shadow-lg transition-all duration-500'
               // onMouseLeave={() => { setOpenDepartment(false); setOpenMusic(false) }}
               // onMouseEnter={() => { setDepartmenthadFocus(true) }}
         >
-                  <Link href={''} className='flex py-1.5 content-center  items-baseline text-center  mx-2 pl-2 md:pl-0 border-b  border-white hover:border-b-gray-500 hover:border-r-mid-blue  hover:md:text-gray-300 
+                  <Link href={''} className='flex py-1.5 content-center items-baseline text-center  mx-2 pl-2 md:pl-0 border-b  border-white hover:border-b-gray-500 hover:border-r-mid-blue  hover:md:text-gray-300 
                    hover:bg-dark-blue active:bg-dark-blue  hover:text-white    hover:md:bg-inherit transition-all duration-500'>
                     Sabbath School
                   </Link>
@@ -85,7 +87,7 @@ export const NavList = () => {
           </div>
 
           <Link href={'#'} className='flex  content-center font-medium  text-center  mx-2 border-b py-2 md:py-0 pl-2 md:pl-0 border-b-dark-blue md:border-white  hover:border-b-dark-blue  hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white  hover:md:text-inherit   transition-all duration-500'>
-                Meetings
+                Events
           </Link>
           
           <Link href={''} className='flex content-center font-medium text-center  mx-2 border-b py-2 md:py-0 pl-2 md:pl-0 border-b-dark-blue md:border-white  hover:border-b-dark-blue  hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white  hover:md:text-inherit transition-all duration-500'>

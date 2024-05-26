@@ -6,22 +6,25 @@ import { FaXTwitter } from "react-icons/fa6";
 import { PiYoutubeLogoBold } from "react-icons/pi";
 
 
-const SocialMedia = () => {
+const SocialMedia = ({primary = true}) => {
   return (
     <>
-      <Link href={''} className='inline-flex justify-center items-center p-1 border rounded-full bg-mid-blue  shadow-sm hover:shadow-mid-blue/40 hover:scale-105'>
-          <FaXTwitter  />
-        </Link> 
-        <Link href={''} className='inline-flex justify-center items-center p-1 border rounded-full bg-mid-blue  shadow-sm hover:shadow-mid-blue/40 hover:scale-105'>
-          <FaTiktok />
-        </Link> 
-        <Link href={''} className='inline-flex justify-center items-center p-1 border  rounded-full bg-mid-blue  shadow-sm hover:shadow-mid-blue/40 hover:scale-105'>
-          <PiYoutubeLogoBold />
-        </Link> 
-        <Link href={''} className='inline-flex justify-center items-center p-1 border rounded-full bg-mid-blue shadow-sm  hover:shadow-mid-blue/40 hover:scale-105'>
+         <Link href={''} className={`inline-flex justify-center items-center p-1 borer rounded-full hover:scale-105 ${primary ? 'bg-mid-blue  shadow-sm hover:shadow-mid-blue/40 ': ' bg-inherit' }  `}>
           <FaFacebookF  />
         
         </Link> 
+          <Link href={'https://www.youtube.com/channel/UCLDWCcGi3uU60dtGHnfVDhA'} target='blank' className={`inline-flex justify-center items-center p-1 borer rounded-full hover:scale-105 ${primary ? 'bg-mid-blue  shadow-sm hover:shadow-mid-blue/40 ': ' bg-inherit' }  `}>
+          <PiYoutubeLogoBold />
+        </Link> 
+    
+      <Link href={''} className={`inline-flex justify-center items-center p-1 borer rounded-full hover:scale-105 ${primary ? 'bg-mid-blue  shadow-sm hover:shadow-mid-blue/40 ': ' bg-inherit' }  `}>
+          <FaXTwitter  />
+        </Link> 
+        <Link href={''}className={`inline-flex justify-center items-center p-1 borer rounded-full hover:scale-105 ${primary ? 'bg-mid-blue  shadow-sm hover:shadow-mid-blue/40 ': ' bg-inherit' }  `}>
+          <FaTiktok />
+        </Link> 
+    
+       
     </>
   )
 }
