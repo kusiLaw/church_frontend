@@ -30,7 +30,7 @@ const Nav = () => {
           </div>
           <div className='hidden md:flex  sticky capitalize  text-xl text-dark-blue   justify-end pb-3 pt-2'>
           
-              <NavList setOpenDrawer={''}/>
+              <NavList setOpenDrawer={setOpenDrawer}/>
           </div>
           <div className='md:hidden pt-2 flex items- text-dark-blue'>
             <button onClick={()=>setOpenDrawer(true)} className='text-[2.7rem]'>

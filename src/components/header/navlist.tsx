@@ -30,7 +30,8 @@ export const NavList = ({ setOpenDrawer=()=>{}}:{setOpenDrawer: any}) => {
               </div> 
               
               
-              {openDepartment && <div className='md:absolute p-2  md:text-white right-0 top-10 z-20 w-full md:w-64 h-fit  bg-white md:bg-dark-blue md:drop-shadow-lg transition-all duration-1000'
+         {openDepartment &&
+          <div className='md:absolute p-2  md:text-white right-0 top-10 z-20 w-full md:w-64 h-fit  bg-white md:bg-dark-blue md:drop-shadow-lg transition-all duration-1000'
           onMouseLeave={() => {setOpenMusic(false) }}
             
         >
@@ -89,8 +90,8 @@ export const NavList = ({ setOpenDrawer=()=>{}}:{setOpenDrawer: any}) => {
                    hover:bg-dark-blue active:bg-dark-blue  hover:text-white  hover:md:bg-inherit transition-all duration-500'>
                       Communnication
                   </Link>
-                </div>
-                }
+          </div>
+         }
           </div>
 
           <Link onClick={() => { setOpenDepartment(false); setOpenMusic(false); setOpenDrawer(false) } } href={'/events'} className='flex  content-center font-medium  text-center  mx-2 border-b py-2 md:py-0 pl-2 md:pl-0 border-b-dark-blue md:border-white  hover:border-b-dark-blue  hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white  hover:md:text-inherit   transition-all duration-500'>
