@@ -28,7 +28,7 @@ const Nav = () => {
 
               {/* <LinkButton /> */}
           </div>
-          <div className='hidden md:flex  sticky capitalize  text-xl text-dark-blue   justify-end pb-3 pt-2'>
+          <div className='hidden md:flex items-center sticky capitalize  text-xl text-dark-blue   justify-end pb3 pt2 '>
           
               <NavList setOpenDrawer={setOpenDrawer}/>
           </div>
@@ -42,7 +42,7 @@ const Nav = () => {
       </div>
       <div className='md:hidden'>
        <Drawer isOpen={openDrawer} setIsOpen={setOpenDrawer}>
-          <div className='capitalize text-xl  text-dark-blue pt-1 '>
+          <div className='capitalize text-lg  text-dark-blue pt-1 '>
             <NavList setOpenDrawer={setOpenDrawer} />
           </div>
         </Drawer>

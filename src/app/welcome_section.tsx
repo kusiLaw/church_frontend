@@ -62,7 +62,7 @@ const WelcomeSection = () => {
                             
 
                 <div className='absolute -bottom-2 right-0 left-0 overflow-hidden  w-full flex justify-center z-10 ' ref={ref2}>
-                <Image priority src='to_bottom_white.svg' alt='top' width={250}  height={85} />
+                <Image priority src='to_bottom_white.svg' alt='' width={250}  height={85} />
             </div>
       
       </div>

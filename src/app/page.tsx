@@ -60,10 +60,10 @@ export default function Home() {
                   
                   ].map((item, index) => (
                     <div key={item.id}>
-                                          <Suspense key={index} fallback={<Skeleton customClassNames='rounded-tl-xl rounded-tr-xl h-[222px] text-[2rem] w-full' viewAs={'image'}/>}>
+                      <Suspense key={index} fallback={<Skeleton customClassNames='rounded-tl-xl rounded-tr-xl h-[222px] text-[2rem] w-full' viewAs={'image'}/>}>
 
                         <BeliefCard {...item} id={index + 1} />
-                        </Suspense>
+                      </Suspense>
                     </div>
                 ))}
                 </div>
