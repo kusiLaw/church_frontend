@@ -85,6 +85,13 @@ export default function Home() {
                 </h2>
               </div>
           
+                  <div className="w-[95%] lg:w-[100%] h-[20rem] md:h-[32rem]  mx-auto mt-8 mb-14">
+                      <Suspense fallback={<Skeleton customClassNames='rounded-tl-xl z-30 rounded-tr-xl h-[222px] w-full' viewAs={'video'}/>}>
+
+                      <YoutubeVideo embedId="4m3d43gVJsg"/>
+                    </Suspense>
+                    
+                  </div>
              
               <div className="w-full mt-6">
                 <div className="  w-fu flex flex-wrap ">
@@ -129,17 +136,7 @@ export default function Home() {
                          </p>
                     </div>
                   </div>
-                     
-
-
-                  <div className="w-[95%] lg:w-[45% h-[20rem] md:h-[32rem]  mx-auto mt-8 mb-24">
-                      <Suspense fallback={<Skeleton customClassNames='rounded-tl-xl z-30 rounded-tr-xl h-[222px] w-full' viewAs={'video'}/>}>
-
-                      <YoutubeVideo embedId="4m3d43gVJsg"/>
-                    </Suspense>
-                    
-                  </div>
-                </div>
+                 </div>
               </div>
             </div>
           </section> 
