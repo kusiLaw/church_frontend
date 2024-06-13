@@ -11,13 +11,44 @@ import YoutubeVideo from "@/components/video/youtube";
 import MapContainer from "@/components/map/map";
 import { Suspense } from "react";
 import Skeleton from "@/components/skeleton";
-import ProgramVideo from "@/components/video/program";
+import Image from 'next/image'
 
 export default function Home() {
   return (
     <main className="w-full">
       <section id='welcome'>
-            <WelcomeSection />
+              <div  className={ `relative bg-black/60 flex flex-col items-center h-fit md:h-[38rem] lg:max-h-[45rem]  mb-20 w-full bg-no-repeat  
+               bg-[url('/welcomemini.jpg')] md:bg-[url('/welcom.jpg')]  bg-fixed  bg-cover bg-right-bottom md:bg-bottom  text-white overflow-hidden border-none `}>
+            
+        <div className={`flex relative 
+              mt-20 mb-28 w-full px-3  flex-col items-center justify-center  z-10 transition-all duration-700`}>
+              <h1 >
+                  <span className={`block text-lg italic md:text-2xl font-thin mb-4 tighter`}>Welcome to,</span>
+                <span className="text-white text-4xl md:text-6xl lg:text-7xl font-normal lg:font-medium text-center w-full capitalize">Milton keynes S.D.A Int church.</span> 
+              </h1>
+              <p className='font-light text-lg md:text-2xl space-x-3 mt-6 text-center md:mt-8 tracking-wide'>
+                Together, we have faith, Join our family now and let us worship together.
+              </p>
+              <WelcomeSection/>
+          
+              <Link href={'https://docs.google.com/forms/d/e/1FAIpQLSePA4TMnIA7Dn6DCs8GsQopRmNsl8_uIcHmCI1wUCUGvK-IJA/viewform'} target='blank'
+                
+                  className={`${''}tracking-wider mt-1 lg:mt-0 flex w-fit justify-center self-center items-center gap-3 rounded-md  font-semibold   px-10 py-3  font- leading-6 text-xl capitalize
+                  text-white shadow-sm border hover:shadow-md hover:bg-white/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}>
+                          Join us now
+              </Link>
+          
+          
+            
+        </div>      
+        <div className="absolute top-0 bottom-0 right-0 left-0 bg-black/55 md:bg-black/60 "></div>
+                            
+
+                <div className='absolute -bottom-2 right-0 left-0 overflow-hidden  w-full flex justify-center z-10 ' >
+                <Image priority src='to_bottom_white.svg' alt='' width={250}  height={85} />
+            </div>
+      
+       </div>
       </section>
 
       
@@ -25,7 +56,7 @@ export default function Home() {
 
         <div className="w-full z-20 bg-red-4 px-2 md:px-4"   >
          
-          <section className="w-full "   >
+          <section className="w-full " id="beliefs"  >
             <div className="z-20 bg-red-4 px-2 md:px-4" >
               <div className="w-full flex justify-center lg:justify-start">
                   <h2 className={` text- flex flex-col gap-3 text-2xl font-medium capitalize after:h-[2px] after:w-12 after:self-center w-fit 
@@ -76,7 +107,7 @@ export default function Home() {
             </div>
           </section> 
           
-          <section className="w-full mt-20"   >
+          <section className="w-full mt-20"  id='angels-message' >
             <div className="z-20 bg-red-4 px-2 md:px-4" >
               <div className="w-full flex justify-center lg:justify-start">
                   <h2 className={` text- flex flex-col gap-3 text-2xl font-medium capitalize after:h-[2px] after:w-12 after:self-center w-fit 
@@ -176,7 +207,7 @@ export default function Home() {
         </div>
           </section>
         </div>
-        <aside className="  hidden lg:block lg:w-[14rem] mr-2 ">
+        <aside id='aside' className="  hidden lg:block lg:w-[14rem] mr-2 ">
           <div className="w-full sticky top-36">
             <AsideCard heading="Up comming Events">
               {false &&
@@ -208,7 +239,7 @@ export default function Home() {
       
 
       
-      <section className="md:mx-4 text-xl font-light px-4 md:px-10 h-fit mt-24  mb-20">
+      <section className="md:mx-4 text-xl font-light px-4 md:px-10 h-fit mt-24  mb-20" id='contact'>
           <h2 className={` text-center flex flex-col gap-3 text-2xl font-medium capitalize after:h-[2px] after:w-12 after:self-center 
               after:bg-red-600 mb-10 `}>
                 Contact us
@@ -240,19 +271,21 @@ export default function Home() {
                   <label htmlFor="last_name" className="block mb-2  text-base text-gray-900 capitalize w-full ">Message</label>
 
                   <textarea className=" bg-white border text-gray-900 text-sm rounded-lg border-dark-blue focus:shadow-mid-blue block w-full p-2.5
-          shadow-sm outline-0 invalid:border-red-00 valid:ring-dark-blue" placeholder="your message here" rows={10}  >
+                      shadow-sm outline-0 invalid:border-red-00 valid:ring-dark-blue" placeholder="your message here" rows={10}  >
 
                   </textarea>
               </div>
               <div className="w-full flex justify-center justify-self-end  mt-6">
-                <input type="submit " value={'send'} className="text-white bg-dark-blue text-center py-2 w-full rounded-lg "/>
+                <button  className="text-white bg-dark-blue text-center py-2 w-full rounded-lg " >
+                  send
+                </button>
               </div>
             </form>
           </div>
           <div className="w-full lg:w-[47%] max-h-fit  ">
             <div className="flex gap-2 mb-4 items-center font-medium"><SlLocationPin /> MK1 1QT </div>
             <div className="w-full relative  h-[32rem]">
-              {/* <Suspense fallback={<p  className="relative  h-[32rem] w-full bg-black" >Loading video...</p>}> */}
+            {/* <Suspense fallback={<p  className="relative  h-[32rem] w-full bg-black" >Loading video...</p>}> */}
                     {/* <Suspense fallback={<p className="w-[95%] lg:w-[45% h-[20rem] md:h-[32rem]  mx-auto mt-8 mb-24" >Loading video...</p>}> */}
 
                  <MapContainer apiKey={process.env.GOOGLE_MAP_KEY || ''} mapId={process.env.MAPID || ''} />
