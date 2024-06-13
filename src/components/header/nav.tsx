@@ -15,9 +15,10 @@ const Nav = () => {
   return (
     <div className='fixed top-0 right-0 left-0 bg-white h-fit w-full z-50 flex justify-center '>
       <div className='flex relative justify-between items-center  p-1.5 max-w-[1660px] w-full'>
-        <div className=' left-10'>
+        <div className='md:ml-4 left-10'>
           <div className=''>
-            <Image src={'/logo.svg'} width={85} height={35} alt=''/>
+            <Image src={'/churchlogo.jpg'} width={175} height={35} alt='mk int sda logo' />
+            <div className='sr-only'>Mk International church logo</div>
           </div>
         </div>
         <div className='flex flex-col items-end md:mr-4 lg:mr bordr'>
@@ -34,7 +35,8 @@ const Nav = () => {
           </div>
           <div className='md:hidden pt-2 flex items- text-dark-blue'>
             <button onClick={()=>setOpenDrawer(true)} className='text-[2.7rem]'>
-              <IoMenuOutline onClick={()=>setOpenDrawer(true)}/>
+              <IoMenuOutline onClick={() => setOpenDrawer(true)} />
+              <span className='sr-only'>menu</span>
             </button>
           </div>
         </div>

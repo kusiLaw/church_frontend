@@ -7,11 +7,11 @@ export const NavList = ({ setOpenDrawer=()=>{}}:{setOpenDrawer: any}) => {
 
   return (
     <>
-      <Link onClick={() => {  setOpenDrawer(false) }} href={'/'} className='flex  content-center  items-baseline font-medium text-center  mx-2 border-b py- md:py-0 pl-2 md:pl-0
+      <Link  onClick={() => {  setOpenDrawer(false) }} href={'/'} className='flex  content-center  items-baseline font-medium text-center  mx-2 border-b py- md:py-0 pl-2 md:pl-0
         border-red-500 border-b-dark-blue md:border-white   hover:border-b-dark-blue  hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white hover:md:text-inherit  transition-all duration-500'>
         home
       </Link>
-      <div className='relative  group/department  h-full'  >
+      <div tabIndex={0} className='relative  group/department  h-full'  >
           <p className={`flex justify-between border-b items-baseline text-center  mx-2  py-2 md:py-2  md:border-white font-medium  border-b-dark-blue 
            hover:bg-dark-blue active:bg-dark-blue hover:md:bg-white hover:text-white  hover:md:text-inherit  transition-all duration-500
              `}>
@@ -34,7 +34,7 @@ export const NavList = ({ setOpenDrawer=()=>{}}:{setOpenDrawer: any}) => {
             <Link onClick={() => {  setOpenDrawer(false) } } href={'/departments/youth'} className='flex py-1.5 content-center  items-baseline text-center  mx-2 pl-2 md:pl-0 border-b  border-white hover:border-b-gray-500 hover:border-r-mid-blue  hover:md:text-gray-300 
               hover:bg-dark-blue active:bg-dark-blue  hover:text-white  hover:md:bg-inherit transition-all duration-500'>                    youth
             </Link>
-            <div className={` relative   group/music `}>
+            <div tabIndex={1} className={` relative   group/music `}>
                 <div className={`flex 
                     py-1.5 justify-between content-cent  items-baseli text-center ml-2 md:mx-2 pl-2 md:pl-0 border-b border-white hover:border-b-gray-500 hover:md:text-gray-300 
                   hover:   hover:bg-dark-blue active:bg-dark-blue  hover:text-white   hover:md:bg-inherit transition-all duration-500
