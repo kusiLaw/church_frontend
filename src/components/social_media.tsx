@@ -12,20 +12,23 @@ const SocialMedia = ({primary = true}) => {
       <Link href={'https://www.facebook.com/MKINTSDACHURCH'} target='_blank'
         className={`inline-flex justify-center items-center p-1 borer rounded-full hover:scale-105 ${primary ? 'bg-mid-blue  shadow-sm hover:shadow-mid-blue/40 ' : ' bg-inherit'}  `}>
           <FaFacebookF  />
-        
-        </Link> 
+        <span aria-label="screen reader only label"  className='sr-only'>facebook</span>
+      </Link> 
       <Link href={'https://www.youtube.com/channel/UCLDWCcGi3uU60dtGHnfVDhA'} target='_blank'
         className={`inline-flex justify-center items-center p-1 borer rounded-full hover:scale-105 ${primary ? 'bg-mid-blue  shadow-sm hover:shadow-mid-blue/40 ' : ' bg-inherit'}  `}>
-          <PiYoutubeLogoBold />
+        <PiYoutubeLogoBold />
+        <span aria-label="screen reader only label"  className='sr-only'>youtube</span>
         </Link> 
     
       <Link href={'https://x.com/KeynesSda'} target='_blank'
         className={`inline-flex justify-center items-center p-1 borer rounded-full hover:scale-105 ${primary ? 'bg-mid-blue  shadow-sm hover:shadow-mid-blue/40 ' : ' bg-inherit'}  `}>
-          <FaXTwitter  />
+        <FaXTwitter />
+        <span aria-label="screen reader only label"  className='sr-only'>twitter</span>
         </Link> 
       <Link href={'https://www.tiktok.com/@mkintsdayouth'} target='_blank'
         className={`inline-flex justify-center items-center p-1 borer rounded-full hover:scale-105 ${primary ? 'bg-mid-blue  shadow-sm hover:shadow-mid-blue/40 ' : ' bg-inherit'}  `}>
-          <FaTiktok />
+        <FaTiktok />
+        <span aria-label="screen reader only label" className='sr-only'>tiktok</span>
         </Link> 
     
        

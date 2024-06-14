@@ -53,8 +53,8 @@ const Footer = () => {
                     <input type='email'  required name='email' id='email' minLength={5} maxLength={65}  placeholder='Email Address'
                                 pattern='\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$' title='Invalid Email format'
                                     value={email} onChange={e => setEmail(e.target.value.replace(/\s+/g, '')) }
-                            className='w- py-1 px-1 rounded-sm  border-collapse valid:border-2  valid:border-green-500 invalid:border-2 text-default_blue
-                                bg-light_accent_divider w-[15rem]  ' />
+                            className='w- py-1 px-1 rounded-sm  border-none valid:border-2  valid:border-green-500 invalid:border-2 
+                                bg-white w-[15rem] placeholder:text-black ' />
                 {/* <div className='lg:w-[16rem]'>
                     <Input label='email' type='email' placeholder='email'/>
                 </div> */}

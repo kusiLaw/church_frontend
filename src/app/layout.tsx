@@ -4,7 +4,7 @@ import "./globals.css";
 import { assistant } from "@/components/font";
 import Nav from '@/components/header/nav'
 import Footer from "@/components/footer/footer";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,8 +12,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 
 export const metadata: Metadata = {
-  title: "Milton Keynes International S.D.A Church | UK SDA ",
-  description: "Ghana S.D.A Church In Milton Keynes - UK, Seventh Day Adventist Church ",
+  title: "Milton Keynes International SDA Church",
+  description: "Milton Keynes International Seventh Day Adventist Church. Ghana S.D.A Church In Milton Keynes, UK",
 };
 
 export default function RootLayout({
@@ -32,9 +32,11 @@ export default function RootLayout({
                 {children}
             </div>
            
-            <Footer/>
+            <Footer />
+            
             </div>
-          </div>
+         </div>
+         <SpeedInsights/>
       </body>
     </html>
   );
