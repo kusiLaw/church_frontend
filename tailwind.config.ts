@@ -58,8 +58,9 @@ const config: Config = {
       },
 
       screens: {
-      'xsm': '360px',
-      }
+        'xsm': '360px',
+        'larger-screen': '1680px',
+      },
     },
   },
   plugins: [

@@ -17,7 +17,7 @@ const Nav = () => {
       <div className='flex relative justify-between items-center  p-1.5 max-w-[1660px] w-full'>
         <div className='md:ml-4 left-10'>
           <div className=''>
-            <Image src={'/churchlogo.jpg'} width={175} height={35} alt='mk int sda logo' />
+            <Image src={'/milton-keynes-sda-churchlogo.jpg'} width={175} height={35} alt='mk int sda logo' />
             <div className='sr-only'>Mk International church logo</div>
           </div>
         </div>

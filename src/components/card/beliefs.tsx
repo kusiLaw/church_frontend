@@ -11,7 +11,6 @@ const BeliefCard = ({id ='' || 1 , link='', image='', topic= '', text='', verses
                   <div className='overflow-hidden border-none h-[12rem] '>
                     <Suspense key={id} fallback={<Skeleton customClassNames='rounded-tl-xl rounded-tr-xl h-[222px] text-[2rem] w-full' viewAs={'image'}/>}>
                       <Image src={image} width={350} height={350} alt='' className='rounded-tl-xl rounded-tr-xl' />
-          {/* <Skeleton customClassNames='rounded-tl-xl rounded-tr-xl h-[222px] w-full' viewAs={'image'}/> */}
                     </Suspense>
                 </div>
                 <h3 className="capitalize font-bold text-lg my-4 px-2">

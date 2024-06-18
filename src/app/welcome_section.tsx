@@ -2,6 +2,10 @@
 import React, {useState,} from 'react'
 import { IoIosArrowForward} from "react-icons/io";
 import { Modal } from "flowbite-react";
+import dynamic from 'next/dynamic'
+
+const WelcomeVideo = dynamic(() => import('@/components/video/video'), )
+
 
 const WelcomeSection = () => {
 
@@ -19,11 +23,9 @@ const WelcomeSection = () => {
      <Modal dismissible show={openModal} size='7xl' onClose={() => setOpenModal(false)}>
         <Modal.Header>Insight</Modal.Header>
         <Modal.Body>
-          <div className='relative w-full h-full'>
-               <div className='mx-auto h-[80%] w-[90%] flex justify-center'>
-                   <video  autoPlay controls disablePictureInPicture controlsList="noownload"  className="relative  h-[80%] w-[90%]  " >
-                       <source src="https://mkchurch.s3.us-east-2.amazonaws.com/sabbath_service.mp4" type="video/mp4" />
-                   </video>
+          <div className='relative w-full h-full border-none'>
+               <div className='mx-auto h-[80%] w-[90%] flex justify-center border-none'>
+                  <WelcomeVideo link="https://mkchurch.s3.us-east-2.amazonaws.com/sabbath_service.mp4"/>
                </div>
            </div>  
         </Modal.Body>
