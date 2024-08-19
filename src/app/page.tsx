@@ -10,6 +10,8 @@ import { BiBible } from "react-icons/bi";
 import 'dotenv/config'
 import YoutubeVideo from "@/components/video/youtube";
 import MapContainer from "@/components/map/map";
+import { Suspense } from "react";
+import Skeleton from "@/components/skeleton";
 
 export default function Home() {
   return (
@@ -17,7 +19,7 @@ export default function Home() {
      <section>
             <WelcomeSection />
       </section>
-      
+      {/* <Skeleton customClassNames="rounded- h-[222px]" viewAs={'image'}/> */}
       <div className="block lg:flex">
 
         <div className="w-full z-20 bg-red-4 px-2 md:px-4"   >
@@ -44,25 +46,28 @@ export default function Home() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-8 sm:place-content-between md:grid-cols-3   gap- flex-shrink  w-full">
                   {[{
                     'id': '1', 'topic': 'holy scripture hh', 'image': '/scripture.jpg', 'text': ' The Holy Scriptures, Old and New Testaments, are the written Word of God, given by divine inspiration.',
-                    'verses': 'Ps. 119:105; Prov. 30:5, 6; Isa. 8:20; John 17:17; 1 Thess. 2:13; 2 Tim. 3:16, 17; Heb. 4:12; 2 Peter 1:20, 21. nnn jkj kjj kjj lkjk dslkd slknsjl'
+                    'verses': 'Ps. 119:105; Prov. 30:5, 6; Isa. 8:20; John 17:17; 1 Thess. 2:13; 2 Tim. 3:16, 17; Heb. 4:12; 2 Peter 1:20, 21', 'link':'https://www.adventist.org/holy-scriptures/',
                   },
                     {
                     'id': '2', 'topic': 'The Trinity', 'image': '/trinity.webp', 'text': 'There is one God: Father, Son, and Holy Spirit, a unity of three coeternal Persons.',
-                    'verses': 'Gen. 1:26; Deut. 6:4; Isa. 6:8; Matt. 28:19; John 3:16; 2 Cor. 1:21, 22; 13:14; Eph. 4:4-6; 1 Peter 1:2.'
+                    'verses': 'Gen. 1:26; Deut. 6:4; Isa. 6:8; Matt. 28:19; John 3:16; 2 Cor. 1:21, 22; 13:14; Eph. 4:4-6; 1 Peter 1:2 ','link':'https://www.adventist.org/trinity/',
                     },
                     {
                     'id': '3', 'topic': 'God the Father', 'image': '/thefather3.webp', 'text': 'God the eternal Father is the Creator, Source, Sustainer, and Sovereign of all creation. He is just and holy, merciful and gracious, slow to anger, and abounding in steadfast love and faithfulness', 
-                    'verses': 'Gen. 1:1; Deut. 4:35; Ps. 110:1, 4; John 3:16; 14:9; 1 Cor. 15:28; 1 Tim. 1:17; 1 John 4:8; Rev. 4:11.'
+                    'verses': 'Gen. 1:1; Deut. 4:35; Ps. 110:1, 4; John 3:16; 14:9; 1 Cor. 15:28; 1 Tim. 1:17; 1 John 4:8; Rev. 4:11','link':'https://www.adventist.org/father/',
                   },
                   
                   ].map((item, index) => (
                     <div key={item.id}>
-                      <BeliefCard {...item} id={index + 1} />
+                                          <Suspense key={index} fallback={<Skeleton customClassNames='rounded-tl-xl rounded-tr-xl h-[222px] text-[2rem] w-full' viewAs={'image'}/>}>
+
+                        <BeliefCard {...item} id={index + 1} />
+                        </Suspense>
                     </div>
                 ))}
                 </div>
                 <p className="mt-8 w-full text-center sm:text-end lg:mr-4">
-                  <Link href={''} className=" sm:text-end w-full underline underline-offset-4 text-dark-blue ">View All</Link>
+                  <Link href={'https://www.adventist.org/beliefs/'}  target='_blank' className=" sm:text-end w-full underline underline-offset-4 text-dark-blue ">View All</Link>
                 </p>
           
               </div>
@@ -80,7 +85,7 @@ export default function Home() {
               </div>
           
              
-              <div className="w-full  mt-6">
+              <div className="w-full mt-6">
                 <div className="  w-fu flex flex-wrap ">
                         <div className="w-[100%] lg:w-[55%" >
                     <p className="flx text-base h-fit mb-4  ">
@@ -127,13 +132,54 @@ export default function Home() {
 
 
                   <div className="w-[95%] lg:w-[45% h-[20rem] md:h-[32rem]  mx-auto mt-8 mb-24">
-                    <YoutubeVideo embedId="4m3d43gVJsg"/>
+                    {/* <Suspense fallback={<p className="w-[95%] lg:w-[45% h-[20rem] md:h-[32rem]  mx-auto mt-8 mb-24" >Loading video...</p>}> */}
+                      <Suspense fallback={<Skeleton customClassNames='rounded-tl-xl z-30 rounded-tr-xl h-[222px] w-full' viewAs={'video'}/>}>
+
+                      <YoutubeVideo embedId="4m3d43gVJsg"/>
+                    </Suspense>
+                    
                   </div>
                 </div>
               </div>
             </div>
           </section> 
 
+          
+
+          <section id="about" className="relative text-white mt-20  bg-[url('/congregation.jpg')] h-fit
+          w-[95%] bg-fixed md:bg-cover mx-auto
+          md:bg-no-repeat bg-tp md:bg-center">
+        <div className="h-full py-20 w-full -z-10 bg-black/80 ">
+          <h2 className={` text-center flex flex-col gap-3 text-3xl font-medium capitalize after:h-[2px] after:w-12 after:self-center 
+              after:bg-red-600 mb-10 m text-white`}>
+                Weekly activities
+          </h2>
+        
+          <p className="w-full text-center text-lg">We invite you to join us in person and online for worship.</p>
+          <div className="w-full mt-10  flex justify-center px-6 sm:justify-start md:justify-between lg:justify-evenly  flex-wrap gap-10 sm:gap-6 md:gap-[3%]
+           px-auto mx-auto">
+            <div className="col-span- w-[90%] sm:w-[47%] md:w-[30%] lg:-[22% flex justify-center ">
+                  <ProgramCard title="Sunday bible studies" text="Join us study world of God on every sunday." date="Every sunday "
+                    time="20:00 - 21:00" link="https://us02web.zoom.us/j/98995087999?pwd=M1E3dkpRRDZkUGlBTXEzSjI5bit2UT09" loc="zoom" linkText="Live On Zoom" />
+               
+            </div>
+              
+              <div className="col-span- w-[90%] sm:w-[47%] md:w-[30%] l:w-[22%] flex justify-center">
+
+                  <ProgramCard title="Friday Meetings" text="We welcome sabbath and have a word of prayers" date="Every friday " time="20:00 - 21:00" 
+                    loc="zoom" link="https://us02web.zoom.us/j/98995087999?pwd=M1E3dkpRRDZkUGlBTXEzSjI5bit2UT09"  linkText="Live On Zoom"/>
+               
+                </div>
+              <div className="col-span- w-[90%] sm:w-[47%] md:w-[30%] g:w-[22%] flex justify-center">
+
+                  <ProgramCard title="Sabbath Meetings" text="Remember the sabbath to keep it holy" date="Every saturday " time="9:45am - 2:00pm" link="https://us02web.zoom.us/j/98995087999?pwd=M1E3dkpRRDZkUGlBTXEzSjI5bit2UT09"
+                    loc="on premises" linkText="Join Live" />
+                
+                </div>
+
+          </div>
+        </div>
+          </section>
         </div>
         <aside className="  hidden lg:block lg:w-[14rem] mr-2 ">
           <div className="w-full sticky top-36">
@@ -148,7 +194,7 @@ export default function Home() {
             <AsideCard heading="Recent activities">
                   {false && <div className=" flex flex-col truncate gap-3 overflow-hidden px-4 ">
                     <Link href={''} className="capitalize text-dark-blue hover:text-mid-blue underline underline-offset-2 text-wrap  text-base">Week of prayers - 25/06/2024 </Link>
-                    <Link href={''} className="capitalize text-dark-blue hover:text-mid-blue underline underline-offset-2 text-wrap text-base ">Week of prayercsscsscccscs - 25/06/2024 </Link>
+                    <Link href={''} className="capitalize text-dark-blue hover:text-mid-blue underline underline-offset-2 text-wrap text-base ">Week of prayer - 25/06/2024 </Link>
 
                     <Link href={''} className="capitalize text-dark-blue hover:text-mid-blue underline underline-offset-2 text-wrap  text-base">Week of prayers csc- 25/06/2024 </Link>
 
@@ -165,45 +211,7 @@ export default function Home() {
       
       </div>
       
-      <section className="relative text-white mt-20 b-[url('/hideout.svg')] bg-[url('/congregation.jpg')] h-fit
-          w-full bg-fixed md:bg-cover
-          md:bg-no-repeat bg-tp md:bg-center">
-        <div className="h-full py-20 w-full -z-10 bg-black/60 ">
-          <h2 className={` text-center flex flex-col gap-3 text-3xl font-medium capitalize after:h-[2px] after:w-12 after:self-center 
-              after:bg-red-600 mb-10 m text-white`}>
-                Weekly activities
-          </h2>
-        
-          <p className="w-full text-center text-lg">We invite you to join us in person and online for worship.</p>
-          <div className="w-full mt-10  flex justify-center px-4 sm:justify-between  flex-wrap gap-10 sm:gap-6
-           flex-shr border- border-red-700 ">
-            <div className="col-span- w-[90%] sm:w-[47%] md:w-[30%] lg:w-[22%] flex justify-center ">
-              <ProgramCard title="Sunday bible studies" text="Join us study world of God on every sunday." date="Every sunday " time="19:30" link="/" loc="zoom">
-                <BiBible/>
-              </ProgramCard>
-            </div>
-              <div className="col-span- w-[90%] sm:w-[47%] md:w-[30%] lg:w-[22%]  flex justify-center">
 
-                  <ProgramCard title="Wednesday Prayers" text="We have God who answers prayer." date="Every Wednesday " time="19:30" link="/" loc="zoom">
-                    <BiBible/>
-                  </ProgramCard>
-              </div>
-              <div className="col-span- w-[90%] sm:w-[47%] md:w-[30%] lg:w-[22%] flex justify-center">
-
-                <ProgramCard title="Friday Meetings" text="We welcome sabbath and have a word of prayers" date="Every friday " time="19:00" link="/" loc="zoom">
-                  <BiBible/>
-                </ProgramCard>
-                </div>
-              <div className="col-span- w-[90%] sm:w-[47%] md:w-[30%] lg:w-[22%] flex justify-center">
-
-                  <ProgramCard title="Sabbath Meetings" text="Remember the sabbath to keep it holy" date="Every saturday " time="9:30" link="/" loc="on premises">
-                     <BiBible/>
-                  </ProgramCard>
-                </div>
-
-          </div>
-        </div>
-      </section>
       
       <section className="md:mx-4 text-xl font-light px-4 md:px-10 h-fit mt-24  mb-20">
           <h2 className={` text-center flex flex-col gap-3 text-2xl font-medium capitalize after:h-[2px] after:w-12 after:self-center 
@@ -213,7 +221,7 @@ export default function Home() {
             
 
         <div className="flex flex-col lg:flex-row items-center justify-between  h-fit gap-24 lg:gap-4 w-full ">
-          <div className="w-full lg:w-[45%] h-[35rem] max-h-fit ">
+          <div className="w-full lg:w-[47%] h-[35rem] max-h-fit ">
             <h3 className="font-medium">Send us message</h3>
             <form className="flex flex-col justify-between w-full  ">
               <div className="flex  justify-between w-full">
@@ -246,11 +254,14 @@ export default function Home() {
               </div>
             </form>
           </div>
-          <div className="w-full lg:w-[45%] max-h-fit  ">
+          <div className="w-full lg:w-[47%] max-h-fit  ">
             <div className="flex gap-2 mb-4 items-center font-medium"><SlLocationPin /> MK1 1QT </div>
             <div className="w-full relative  h-[32rem]">
-              <MapContainer apiKey={process.env.GOOGLE_MAP_KEY || ''} mapId={process.env.GOOGLE_MAP_KEY || ''} />
-         
+              {/* <Suspense fallback={<p  className="relative  h-[32rem] w-full bg-black" >Loading video...</p>}> */}
+                    <Suspense fallback={<p className="w-[95%] lg:w-[45% h-[20rem] md:h-[32rem]  mx-auto mt-8 mb-24" >Loading video...</p>}>
+
+                 <MapContainer apiKey={process.env.GOOGLE_MAP_KEY || ''} mapId={process.env.GOOGLE_MAP_KEY || ''} />
+              </Suspense>
             </div>
            
           </div>

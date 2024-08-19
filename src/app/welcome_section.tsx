@@ -1,10 +1,11 @@
 'use client'
-import React, {useRef, useEffect,useState} from 'react'
+import React, {useRef, useEffect,useState, Suspense} from 'react'
 import Image from 'next/image'
 import { IoIosArrowForward,IoMdClose  } from "react-icons/io";
 import { GoPlay } from "react-icons/go";
 
 import { AiOutlinePause } from "react-icons/ai";
+import Link from 'next/link';
 
 
 const WelcomeSection = () => {
@@ -29,11 +30,12 @@ const WelcomeSection = () => {
     return (
       <div>
            <div id='welcome' className={ `relative  bg-[#7aa8c5]/60 flex flex-col items-center h-fit lg:max-h-[45rem]  mb-20 w-full bg-no-repeat  
-            bg-[url('/welcome2.jpg')] bg-fixed bg-cover bg-center lg:bg-none text-white overflow-hidden border-none `}>
-                     <div className='hidden lg:block relative h-fit w-full'>
+            bg-[url('/welcome2.jpg')] lg:bg-[url('/video_tumbnails.png')] bg-fixed bg-cover bg-center lg:b
+            -none text-white overflow-hidden border-none `}>
+              <div className='hidden lg:block relative h-fit w-full'>
                         <video autoPlay loop muted className="relative w-full h-full "  ref={ref}>
                             <source src="/sabbath_service.mp4" type="video/mp4" />
-                        </video>
+                      </video>
                     </div>
                 
                   <div className={`flex    relative  lg:absolute top-0 bottom-0 right-0 left-0  
@@ -52,12 +54,12 @@ const WelcomeSection = () => {
                                         play video <IoIosArrowForward/>
                         </button>
                     
-                        <button
-                            type="submit"
+                        <Link href={'https://docs.google.com/forms/d/e/1FAIpQLSePA4TMnIA7Dn6DCs8GsQopRmNsl8_uIcHmCI1wUCUGvK-IJA/viewform'} target='blank'
+                           
                             className={`${''}tracking-wider mt-16 lg:mt-0 flex w-fit justify-center self-center items-center gap-3 rounded-md  font-semibold   px-10 py-3  font- leading-6 text-xl capitalize
                             text-white shadow-sm border hover:shadow-md hover:bg-white/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}>
                                     Join us now
-                        </button>
+                        </Link>
                      
                     
                        
@@ -80,7 +82,7 @@ const WelcomeSection = () => {
                 
 
                     <div className='absolute -bottom-2 right-0 left-0 overflow-hidden  w-full flex justify-center z-10 ' ref={ref2}>
-                    <Image src='to_bottom_white.svg' alt='top' width={250}  height={85} />
+                    <Image priority src='to_bottom_white.svg' alt='top' width={250}  height={85} />
                     </div>
             </div> 
             {watchVideo &&

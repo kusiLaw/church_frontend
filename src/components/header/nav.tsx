@@ -17,20 +17,20 @@ const Nav = () => {
       <div className='flex relative justify-between items-center  p-1.5 max-w-[1660px] w-full'>
         <div className=' left-10'>
           <div className=''>
-            <Image src={'logo.svg'} width={85} height={35} alt=''/>
+            <Image src={'/logo.svg'} width={85} height={35} alt=''/>
           </div>
         </div>
         <div className='flex flex-col items-end md:mr-4 lg:mr bordr'>
           <div className='flex items-center  w-fit bordr '>
-            <div className='hidden xsm:flex gap-2 md:gap-2 text-white font-black text-md mr-8'>
+            <div className='hidden xsm:flex gap-2 md:gap-2 text-white font-black text-md mr-1'>
                 <SocialMedia/>
             </div>
 
-              <LinkButton />
+              {/* <LinkButton /> */}
           </div>
           <div className='hidden md:flex  sticky capitalize  text-xl text-dark-blue   justify-end pb-3 pt-2'>
           
-              <NavList/>
+              <NavList setOpenDrawer={''}/>
           </div>
           <div className='md:hidden pt-2 flex items- text-dark-blue'>
             <button onClick={()=>setOpenDrawer(true)} className='text-[2.7rem]'>
@@ -43,10 +43,7 @@ const Nav = () => {
       <div className='md:hidden'>
        <Drawer isOpen={openDrawer} setIsOpen={setOpenDrawer}>
           <div className='capitalize text-xl  text-dark-blue pt-1 '>
-            <NavList/>
-            {/* <div className='flex justify-end mt-6 gap-3 text-white '>
-              <SocialMedia/>
-              </div> */}
+            <NavList setOpenDrawer={setOpenDrawer} />
           </div>
         </Drawer>
       </div>
