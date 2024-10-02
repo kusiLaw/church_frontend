@@ -6,20 +6,21 @@ import ProgramCard from "@/components/card/program";
 import Input from "@/components/form/input";
 import AsideCard from "@/components/card/aside";
 import { SlLocationPin } from "react-icons/sl";
-import { BiBible } from "react-icons/bi";
 import 'dotenv/config'
 import YoutubeVideo from "@/components/video/youtube";
 import MapContainer from "@/components/map/map";
 import { Suspense } from "react";
 import Skeleton from "@/components/skeleton";
+import ProgramVideo from "@/components/video/program";
 
 export default function Home() {
   return (
     <main className="w-full">
-     <section>
+      <section id='welcome'>
             <WelcomeSection />
       </section>
-      {/* <Skeleton customClassNames="rounded- h-[222px]" viewAs={'image'}/> */}
+
+      
       <div className="block lg:flex">
 
         <div className="w-full z-20 bg-red-4 px-2 md:px-4"   >
@@ -59,10 +60,10 @@ export default function Home() {
                   
                   ].map((item, index) => (
                     <div key={item.id}>
-                                          <Suspense key={index} fallback={<Skeleton customClassNames='rounded-tl-xl rounded-tr-xl h-[222px] text-[2rem] w-full' viewAs={'image'}/>}>
+                      <Suspense key={index} fallback={<Skeleton customClassNames='rounded-tl-xl rounded-tr-xl h-[222px] text-[2rem] w-full' viewAs={'image'}/>}>
 
                         <BeliefCard {...item} id={index + 1} />
-                        </Suspense>
+                      </Suspense>
                     </div>
                 ))}
                 </div>
@@ -75,7 +76,7 @@ export default function Home() {
             </div>
           </section> 
           
-           <section className="w-full mt-20"   >
+          <section className="w-full mt-20"   >
             <div className="z-20 bg-red-4 px-2 md:px-4" >
               <div className="w-full flex justify-center lg:justify-start">
                   <h2 className={` text- flex flex-col gap-3 text-2xl font-medium capitalize after:h-[2px] after:w-12 after:self-center w-fit 
@@ -84,6 +85,13 @@ export default function Home() {
                 </h2>
               </div>
           
+                  <div className="w-[95%] lg:w-[100%] h-[20rem] md:h-[32rem]  mx-auto mt-8 mb-14">
+                      <Suspense fallback={<Skeleton customClassNames='rounded-tl-xl z-30 rounded-tr-xl h-[222px] w-full' viewAs={'video'}/>}>
+
+                      <YoutubeVideo embedId="4m3d43gVJsg"/>
+                    </Suspense>
+                    
+                  </div>
              
               <div className="w-full mt-6">
                 <div className="  w-fu flex flex-wrap ">
@@ -128,35 +136,22 @@ export default function Home() {
                          </p>
                     </div>
                   </div>
-                     
-
-
-                  <div className="w-[95%] lg:w-[45% h-[20rem] md:h-[32rem]  mx-auto mt-8 mb-24">
-                    {/* <Suspense fallback={<p className="w-[95%] lg:w-[45% h-[20rem] md:h-[32rem]  mx-auto mt-8 mb-24" >Loading video...</p>}> */}
-                      <Suspense fallback={<Skeleton customClassNames='rounded-tl-xl z-30 rounded-tr-xl h-[222px] w-full' viewAs={'video'}/>}>
-
-                      <YoutubeVideo embedId="4m3d43gVJsg"/>
-                    </Suspense>
-                    
-                  </div>
-                </div>
+                 </div>
               </div>
             </div>
           </section> 
 
-          
-
           <section id="about" className="relative text-white mt-20  bg-[url('/congregation.jpg')] h-fit
-          w-[95%] bg-fixed md:bg-cover mx-auto
-          md:bg-no-repeat bg-tp md:bg-center">
-        <div className="h-full py-20 w-full -z-10 bg-black/80 ">
-          <h2 className={` text-center flex flex-col gap-3 text-3xl font-medium capitalize after:h-[2px] after:w-12 after:self-center 
-              after:bg-red-600 mb-10 m text-white`}>
-                Weekly activities
-          </h2>
+            w-[95%] bg-fixed md:bg-cover mx-auto
+            md:bg-no-repeat bg-tp md:bg-center">
+          <div className="h-full py-20 w-full -z-10 bg-black/80 ">
+            <h2 className={` text-center flex flex-col gap-3 text-3xl font-medium capitalize after:h-[2px] after:w-12 after:self-center 
+                after:bg-red-600 mb-10 m text-white`}>
+                  Weekly activities
+            </h2>
         
-          <p className="w-full text-center text-lg">We invite you to join us in person and online for worship.</p>
-          <div className="w-full mt-10  flex justify-center px-6 sm:justify-start md:justify-between lg:justify-evenly  flex-wrap gap-10 sm:gap-6 md:gap-[3%]
+             <p className="w-full text-center text-lg">We invite you to join us in person and online for worship.</p>
+            <div className="w-full mt-10  flex justify-center px-6 sm:justify-start md:justify-between lg:justify-evenly  flex-wrap gap-10 sm:gap-6 md:gap-[3%]
            px-auto mx-auto">
             <div className="col-span- w-[90%] sm:w-[47%] md:w-[30%] lg:-[22% flex justify-center ">
                   <ProgramCard title="Sunday bible studies" text="Join us study world of God on every sunday." date="Every sunday "
@@ -258,10 +253,10 @@ export default function Home() {
             <div className="flex gap-2 mb-4 items-center font-medium"><SlLocationPin /> MK1 1QT </div>
             <div className="w-full relative  h-[32rem]">
               {/* <Suspense fallback={<p  className="relative  h-[32rem] w-full bg-black" >Loading video...</p>}> */}
-                    <Suspense fallback={<p className="w-[95%] lg:w-[45% h-[20rem] md:h-[32rem]  mx-auto mt-8 mb-24" >Loading video...</p>}>
+                    {/* <Suspense fallback={<p className="w-[95%] lg:w-[45% h-[20rem] md:h-[32rem]  mx-auto mt-8 mb-24" >Loading video...</p>}> */}
 
-                 <MapContainer apiKey={process.env.GOOGLE_MAP_KEY || ''} mapId={process.env.GOOGLE_MAP_KEY || ''} />
-              </Suspense>
+                 <MapContainer apiKey={process.env.GOOGLE_MAP_KEY || ''} mapId={process.env.MAPID || ''} />
+              {/* </Suspense> */}
             </div>
            
           </div>
