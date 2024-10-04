@@ -29,7 +29,10 @@ const BeliefCard = ({id ='' || 1 , link='', image='', topic= '', text='', verses
 
                 </div>
               
-                <p className="mb-4 w-full text-end mt-4"><Link href={link} target='_blank' className="text-dark-blue hover:text-light-blue px-2 text-end w-full"> Learn More </Link></p>
+                <p className="mb-4 w-full text-end mt-4">
+                  <span className='sr-only'>to see all our 24 foundametal beliefs,</span>
+                  <Link href={link} target='_blank' className="text-dark-blue hover:text-light-blue px-2 text-end w-full">click to Learn More </Link>
+                </p>
   </div> 
   )
 }
