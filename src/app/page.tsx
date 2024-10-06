@@ -7,47 +7,60 @@ import Input from "@/components/form/input";
 import AsideCard from "@/components/card/aside";
 import { SlLocationPin } from "react-icons/sl";
 import 'dotenv/config'
-import YoutubeVideo from "@/components/video/youtube";
-import MapContainer from "@/components/map/map";
 import { Suspense } from "react";
 import Skeleton from "@/components/skeleton";
-import Image from 'next/image'
+import Image from 'next/image';
+import dynamic from 'next/dynamic';
+// import YoutubeVideo from "@/components/video/youtube";
+// import MapContainer from "@/components/map/map";
+
+const YoutubeVideo = dynamic(
+  () => import('@/components/video/youtube'),
+  {
+    loading: () =><Skeleton customClassNames='rounded-tl-xl z-30 rounded-tr-xl h-[222px] w-full' viewAs={'video'}/>,
+  }
+)
+  
+const MapContainer = dynamic(
+  () => import('@/components/map/map'),
+)
+
+
+
 
 export default function Home() {
   return (
     <main className="w-full">
       <section id='welcome'>
-              <div  className={ `relative bg-black/60 flex flex-col items-center h-fit md:h-[38rem] lg:max-h-[45rem]  mb-20 w-full bg-no-repeat  
-               bg-[url('/welcomemini.jpg')] md:bg-[url('/welcom.jpg')]  bg-fixed  bg-cover bg-right-bottom md:bg-bottom  text-white overflow-hidden border-none `}>
-            
-        <div className={`flex relative 
-              mt-20 mb-28 w-full px-3  flex-col items-center justify-center  z-10 transition-all duration-700`}>
-              <h1 >
-                  <span className={`block text-lg italic md:text-2xl font-thin mb-4 tighter`}>Welcome to,</span>
-                <span className="text-white text-4xl md:text-6xl lg:text-7xl font-normal lg:font-medium text-center w-full capitalize">Milton keynes S.D.A Int church.</span> 
-              </h1>
-              <p className='font-light text-lg md:text-2xl space-x-3 mt-6 text-center md:mt-8 tracking-wide'>
-                Together, we have faith, Join our family now and let us worship together.
-              </p>
-              <WelcomeSection/>
-          
-              <Link href={'https://docs.google.com/forms/d/e/1FAIpQLSePA4TMnIA7Dn6DCs8GsQopRmNsl8_uIcHmCI1wUCUGvK-IJA/viewform'} target='blank'
+        <div  className={ `relative bg-black/60 flex flex-col items-center h-fit md:h-[37rem] lg:max-h-[45rem]  mb-20 w-full bg-no-repeat  
+              bg-[url('/bg5.jpg')]  md:bg-[url('/bg5.jpg')]  md:bg-fixed larger-screen:bg-scroll bg-cover bg-top md:bg-center  text-white overflow-hidden border-none `}>
+            <div className={`flex relative 
+                  mt-20 mb-28 w-full px-3  flex-col items-center justify-center  z-10 transition-all duration-700`}>
+                  <h1 >
+                      <span className={`block text-lg italic md:text-2xl font-thin mb-4 tighter`}>Welcome to </span>
+                    <span className="text-white text-4xl md:text-4xl lg:text-5xl font-normal lg:font-medium text-center w-full capitalize">Milton Keynes Intl. Seventh-day Adventist Church</span> 
+                  </h1>
+                  <p className='font-light text-lg md:text-2xl space-x-3 mt-6 text-center md:mt-8 tracking-wide'>
+                    Together, we have faith, Join our family now and let us worship together.
+                  </p>
+                  <WelcomeSection/>
+              
+                  <Link href={'https://docs.google.com/forms/d/e/1FAIpQLSePA4TMnIA7Dn6DCs8GsQopRmNsl8_uIcHmCI1wUCUGvK-IJA/viewform'} target='blank'
+                    
+                      className={`${''}tracking-wider mt-1 lg:mt-0 flex w-fit justify-center self-center items-center gap-3 rounded-md  font-semibold   px-10 py-3  font- leading-6 text-xl capitalize
+                      text-white shadow-sm border hover:shadow-md hover:bg-white/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}>
+                              Join us now
+                  </Link>
+              
+              
                 
-                  className={`${''}tracking-wider mt-1 lg:mt-0 flex w-fit justify-center self-center items-center gap-3 rounded-md  font-semibold   px-10 py-3  font- leading-6 text-xl capitalize
-                  text-white shadow-sm border hover:shadow-md hover:bg-white/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}>
-                          Join us now
-              </Link>
-          
-          
-            
-        </div>      
-        <div className="absolute top-0 bottom-0 right-0 left-0 bg-black/55 md:bg-black/60 "></div>
-                            
+            </div>      
+            <div className="absolute top-0 bottom-0 right-0 left-0 bg-black/55 md:bg-black/60 "></div>
 
-                <div className='absolute -bottom-2 right-0 left-0 overflow-hidden  w-full flex justify-center z-10 ' >
-                <Image priority src='to_bottom_white.svg' alt='' width={250}  height={85} />
+            <div className='absolute -bottom-2 right-0 left-0 overflow-hidden  w-full flex justify-center z-10 ' >
+                <Image priority src='/to_bottom_white.svg' alt='' width={250}  height={85} />
             </div>
-      
+        
        </div>
       </section>
 
@@ -117,11 +130,7 @@ export default function Home() {
               </div>
           
                   <div className="w-[95%] lg:w-[100%] h-[20rem] md:h-[32rem]  mx-auto mt-8 mb-14">
-                      <Suspense fallback={<Skeleton customClassNames='rounded-tl-xl z-30 rounded-tr-xl h-[222px] w-full' viewAs={'video'}/>}>
-
                       <YoutubeVideo embedId="4m3d43gVJsg"/>
-                    </Suspense>
-                    
                   </div>
              
               <div className="w-full mt-6">
@@ -285,11 +294,9 @@ export default function Home() {
           <div className="w-full lg:w-[47%] max-h-fit  ">
             <div className="flex gap-2 mb-4 items-center font-medium"><SlLocationPin /> MK1 1QT </div>
             <div className="w-full relative  h-[32rem]">
-            {/* <Suspense fallback={<p  className="relative  h-[32rem] w-full bg-black" >Loading video...</p>}> */}
-                    {/* <Suspense fallback={<p className="w-[95%] lg:w-[45% h-[20rem] md:h-[32rem]  mx-auto mt-8 mb-24" >Loading video...</p>}> */}
-
+         
                  <MapContainer apiKey={process.env.GOOGLE_MAP_KEY || ''} mapId={process.env.MAPID || ''} />
-              {/* </Suspense> */}
+              
             </div>
            
           </div>

@@ -2,12 +2,11 @@ import { UserInfo } from 'os'
 import React, {useRef} from 'react'
 
 
- export default async function BackgroudVideo ({ ref }: { ref: any }){
+ export default async function WelcomeVideo ({link}:{link: string}){
   return (
-     <video autoPlay loop muted className="relative hidden lg:block w-full h-full "  ref={ref}>
-            <source src="/sabbath_service.mp4" type="video/mp4" />
-      </video>
+    <video  autoPlay controls disablePictureInPicture controlsList="noownload"  className="relative  h-[80%] w-[90%]  " >
+      <source src={link} type="video/mp4" />
+    </video>
   )
 }
 
-// export default BackgroudVideo
